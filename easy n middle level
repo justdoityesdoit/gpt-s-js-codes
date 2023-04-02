@@ -1,0 +1,200 @@
+console.log("Hello World");
+
+
+
+// declare a variable
+var myVariable;
+
+// assign a value to the variable
+myVariable = "Hello";
+
+// declare and initialize a variable
+var myNumber = 42;
+
+// data types
+var myString = "Hello";
+var myNumber = 42;
+var myBoolean = true;
+
+
+
+// arithmetic operators
+var sum = 2 + 2;
+var difference = 10 - 5;
+var product = 3 * 4;
+var quotient = 20 / 5;
+
+// comparison operators
+var isEqual = 2 == "2"; // true
+var isNotEqual = 2 != "2"; // false
+var isGreaterThan = 10 > 5; // true
+var isLessThan = 5 < 10; // true
+
+// logical operators
+var andOperator = true && false; // false
+var orOperator = true || false; // true
+var notOperator = !true; // false
+
+
+
+// if statement
+var x = 10;
+
+if (x > 5) {
+  console.log("x is greater than 5");
+} else {
+  console.log("x is less than or equal to 5");
+}
+
+// for loop
+for (var i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+// while loop
+var i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+
+
+
+// function declaration
+function addNumbers(a, b) {
+  return a + b;
+}
+
+// function call
+var sum = addNumbers(2, 3);
+console.log(sum);
+
+// function expression
+var multiplyNumbers = function(a, b) {
+  return a * b;
+}
+
+var product = multiplyNumbers(3, 4);
+console.log(product);
+
+
+
+
+
+// constructor function
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// methods
+Person.prototype.greet = function() {
+  console.log("Hello, my name is " + this.name);
+}
+
+Person.prototype.haveBirthday = function() {
+  this.age++;
+}
+
+// create objects
+var john = new Person("John", 30);
+var sarah = new Person("Sarah", 25);
+
+// call methods
+john.greet(); // "Hello, my name is John"
+sarah.haveBirthday();
+console.log(sarah.age); // 26
+
+
+
+
+
+// callback function
+function fetchData(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      callback(null, xhr.responseText);
+    } else {
+      callback("Error");
+    }
+  };
+
+  xhr.send();
+}
+
+// use callback function
+fetchData("https://api.example.com/data", function(err, data) {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(data);
+  }
+});
+
+
+
+
+
+// promise function
+function fetchData(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        resolve(xhr.responseText);
+      } else {
+        reject("Error");
+      }
+    };
+
+    xhr.send();
+  });
+}
+
+// use promise function
+fetchData("https://api.example.com/data")
+  .then(function(data) {
+    console.log(data);
+  })
+  .catch(function(err) {
+    console.error(err);
+  });
+
+
+
+
+
+// arrow function
+const multiplyNumbers = (a, b) => {
+  return a * b;
+}
+
+const product = multiplyNumbers(3, 4);
+console.log(product);
+
+// template literals
+const name = "John";
+const message = `Hello, my name is ${name}`;
+console.log(message);
+
+// destructuring assignment
+const myObj = { a: 1, b: 2 };
+const { a, b } = myObj;
+console.log(a, b);
+
+// spread operator
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [...arr1, ...arr2];
+console.log(arr3);
+
+
+
+
+
